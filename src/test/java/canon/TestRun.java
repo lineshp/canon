@@ -9,6 +9,6 @@ public class TestRun {
 	
 	@Test
 	public void testAddition() {
-		assertTrue(5>7);
+		assertTrue(5<7);
 	}
 }
