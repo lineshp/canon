@@ -9,7 +9,7 @@
 </head>
 <body>
 <form:form action="processLogin" method="post" modelAttribute="loginDetails" acceptCharset="UTF-8">
-test ${name}
+test************* ${name}
 name <form:input type="text" path="name"/>
 
 password <form:input type="password" path="password"/>

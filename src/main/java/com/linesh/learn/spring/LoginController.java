@@ -21,6 +21,7 @@ public class LoginController {
 
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public ModelAndView showLoginPage(ModelMap model){
+		System.out.println("***************login************");
 		model.addAttribute("loginDetails", new LoginDetail()); 
 		UserExtDtls c = context.getBean(UserExtDtls.class);
 		c.setPostCode("122");
@@ -31,7 +32,7 @@ public class LoginController {
 	public ModelAndView processLogin(@ModelAttribute("loginDetails") LoginDetail loginDetails,  BindingResult result, ModelMap m){
 		System.out.println(loginDetails);
 		if(loginService.isValidUser(loginDetails.getName())) {
-			UserExtDtls c =context.getBean(UserExtDtls.class);
+			UserExtDtls c = context.getBean(UserExtDtls.class);
 			System.out.println(c.postCode);
 			return new  ModelAndView("success", m);
 		}

@@ -1,17 +1,19 @@
 package com.linesh.learn.spring;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 
-@Configuration
-@EnableAutoConfiguration
-@ComponentScan
-public class MyStringApp  {
-
-	public static void main(String[] args) {
-			SpringApplication.run(MyStringApp.class, args);
-	}
-
+@SpringBootApplication
+public class MyStringApp extends SpringBootServletInitializer {
+ 
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(MyStringApp.class);
+    }
+ 
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(MyStringApp.class, args);
+    }
 }
