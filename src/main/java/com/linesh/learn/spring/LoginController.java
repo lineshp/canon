@@ -19,7 +19,7 @@ public class LoginController {
 	@Autowired
 	private ApplicationContext context;
 
-	@RequestMapping(value="/login", method = RequestMethod.GET)
+	@RequestMapping(value="/canon/login", method = RequestMethod.GET)
 	public ModelAndView showLoginPage(ModelMap model){
 		System.out.println("***************login************");
 		model.addAttribute("loginDetails", new LoginDetail()); 
